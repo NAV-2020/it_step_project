@@ -5,7 +5,8 @@ import sys
 
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings.local')# django.core.exceptions.ImproperlyConfigured: 
+                                                                            # The SECRET_KEY setting must not be empty
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
