@@ -1,15 +1,15 @@
 import os
 
-ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
-##SECRET_KEY ='1@j25f*=&u-n3sh+9@fkp05)lbq@z*!h*d6uo*s@h30v7jb2p9'
+SECRET_KEY = os.environ.get('SECRET_KEY') #'1@j25f*=&u-n3sh+9@fkp05)lbq@z*!h*d6uo*s@h30v7jb2p9' 
 
-##DEBUG = True
+DEBUG = os.environ.get('DEBUG', default=False) #True 
 
-##ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', default=[]) #['*'] 
 
 
 INSTALLED_APPS = [
@@ -52,15 +52,15 @@ TEMPLATES = [
 WSGI_APPLICATION = 'config.wsgi.application'
 
 
-## Database
-## https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+# Database
+# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-##DATABASES = {
-    ##'default': {
-        ##'ENGINE': 'django.db.backends.sqlite3',
-        ##'NAME': os.path.join(ROOT_DIR, 'db.sqlite3'),
-    ##}
-##}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(ROOT_DIR, 'db.sqlite3'),
+    }
+}
 
 
 # Password validation
