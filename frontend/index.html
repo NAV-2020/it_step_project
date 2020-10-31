@@ -4,26 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfilio Site</title>
-
-    <style>
-        .header__title {
-            text-align: center;
-        }
-    </style>
-
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-
-    <dir class="header">
-      <h1 class="header__title">It satep project</h1>
-    </dir>
-
-    <div class="content"> 
-      .content 
+    <div class="header">
+      <h1 class="header__title">IT Step Project</h1>
+      <h2 class="header__about">About</h2>
     </div>
-
-    <div class="footer">
-      <h1>Footer</h1>
+    <div class="wrapper">
+      <div class="menu">
+        <div class="menu__top">
+          <img
+            class="menu__img"
+            src="./stm32.png"
+            alt=""
+          />
+          <div class="menu__name">Ivan Ivanov</div>
+          <ul class="menu__links">
+            <a href="#"><li class="menu__link">Friends</li></a>
+            <a href="#"><li class="menu__link">Posts</li></a>
+            <a href="#"><li class="menu__link">News</li></a>
+          </ul>
+        </div>
+        <ul class="menu__bottom">
+            <li class="menu__bottom_item">Settings</li>
+            <li class="menu__bottom_item">Logout</li>
+      </ul>
     </div>
+    <div class="content">Content</div>
   </body>
 </html>
