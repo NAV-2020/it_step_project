@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello HTML5(template)!!!!</h1>
+
+    <p>
+        HTML5 и CSS3 на примерах
+        HTML (HyperText Markup Language, язык разметки гипертекста) — это 
+        прежде всего система вёрстки, которая определяет, как и какие элементы 
+        должны располагаться на веб-странице. Информация на сайте, способ 
+        её представления и оформления зависят исключительно от разработчика и 
+        тех целей, которые он перед собой ставит.
+    </p>
+<ul>
+{% for message in messages %}
+<li><h1>{{message}}</h1></li>
+{% endfor %}
+</ul>
+</body>
+</html>
