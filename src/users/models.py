@@ -42,6 +42,10 @@ class Profile(models.Model):
     first_name = models.CharField(max_length=45, null=True, blank=True)
     last_name = models.CharField(max_length=45, null=True, blank=True)
 
+    avatar = models.OneToOneField('common.Photo', 
+                                on_delete=models.CASCADE, 
+                                null=True, 
+                                blank=True)
     user = models.OneToOneField('User',
                                 on_delete=models.CASCADE,
                                 null=True)

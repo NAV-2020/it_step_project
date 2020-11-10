@@ -31,38 +31,40 @@
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
       crossorigin="anonymous"
     ></script>
-    
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" type = "text/css" />
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
   </head>
   <body>
-
     <div class="header">
+    <div class="header__left_side">
       <h1 class="header__title">IT Step Project</h1>
       <h2 class="header__about">About</h2>
     </div>
+      <h3 class="header__user">Hello, {{user}}</h3>
+    </div>
+
     <div class="wrapper">
       <div class="menu">
         <div class="menu__top">
           <img
             class="menu__img"
-            src="{% static 'images/stm32.png' %}"
+            src="{{user.profile.avatar.image.url}}"
             alt="My avatar"
           />
-          <div class="menu__name">Ivan Ivanov</div>
+          <div class="menu__name">Dmytro Parfeniuk</div>
           <ul class="menu__links">
             <a href="#"><li class="menu__link">Friends</li></a>
             <a href="#"><li class="menu__link">Posts</li></a>
             <a href="#"><li class="menu__link">News</li></a>
           </ul>
         </div>
+
         <ul class="menu__bottom">
             <li class="menu__bottom_item">Settings</li>
             <li class="menu__bottom_item">Logout</li>
       </ul>
     </div>
-
-
-    {% block content %} {% endblock content %}
+    {% block content %}{% endblock content %}
   </body>
 </html>

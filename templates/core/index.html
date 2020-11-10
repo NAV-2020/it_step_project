@@ -2,9 +2,12 @@
 
 <div class="content">
   {% for post in posts %}
-
   <div class="card">
-    <img src="./stm32.png" class="card-img-top" alt="..." />
+    <img
+      src="{{post.image.image.url}}"
+      class="card-img-top"
+      alt="..."
+    />
     <div class="card-body">
       <h5 class="card-title">{{post}}</h5>
       <p class="card-text">{{post.body}}</p>
@@ -12,4 +15,5 @@
   </div>
   {% endfor %}
 </div>
+
 {% endblock content %}
