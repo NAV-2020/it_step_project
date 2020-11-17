@@ -1,7 +1,9 @@
-{% extends '_base.html' %} {% block content %}
+{% extends '_base.html' %} 
+
+{% block content %}
 
 <div class="content">
-  {% for post in posts %}
+  {% for post in object_list %}
   <div class="card">
     <img
       src="{{post.image.image.url}}"
