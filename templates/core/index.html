@@ -1,20 +1,42 @@
-{% extends '_base.html' %} 
+{% extends '_base.html' %} {% block content %}
 
-{% block content %}
+<div class="wrapper">
+  <div class="menu">
+    <div class="menu__top">
+      <img
+        class="menu__img"
+        src="{{user.profile.avatar.image.url}}"
+        alt="My avatar"
+      />
+      <div class="menu__name">Ivan Ivanov</div>
+      <ul class="menu__links">
+        <a href="">
+          <li class="menu__link">Friends</li>
+        </a>
+        <a href="{% url 'core:my_posts' %}">
+          <li class="menu__link">Posts</li>
+        </a>
+        <a href="{% url 'core:home' %}">
+          <li class="menu__link">News</li>
+        </a>
+      </ul>
+    </div>
 
+    <ul class="menu__bottom">
+      <li class="menu__bottom_item">Settings</li>
+      <a href="{%url 'logout' %}"><li class="menu__bottom_item">Logout</li></a>
+    </ul>
+  </div>
+</div>
 <div class="content">
   {% for post in object_list %}
-  <div class="card">
-    <img
-      src="{{post.image.image.url}}"
-      class="card-img-top"
-      alt="..."
-    />
-    <div class="card-body">
-      <h5 class="card-title">{{post}}</h5>
-      <p class="card-text">{{post.body}}</p>
+    <div class="card">
+      <img src="{{post.image.url}}" class="card-img-top" alt="..."/>
+      <div class="card-body">
+        <h5 class="card-title">{{post}}</h5>
+        <p class="card-text">{{post.body}}</p>
+      </div>
     </div>
-  </div>
   {% endfor %}
 </div>
 

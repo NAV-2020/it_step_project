@@ -36,41 +36,27 @@
 
   </head>
   <body>
-  {% if user.is_authenticated%}
+
     <div class="header">
-    <div class="header__left_side">
-      <h1 class="header__title">IT Step Project</h1>
-      <h2 class="header__about">About</h2>
-    </div>
-      <h3 class="header__user">Hello, {{user}}</h3>
-    </div>
-
-    <div class="wrapper">
-      <div class="menu">
-        <div class="menu__top">
-          <img
-            class="menu__img"
-            src="{{user.profile.avatar.image.url}}"
-            alt="My avatar"
-          />
-          <div class="menu__name">Dmytro Parfeniuk</div>
-          <ul class="menu__links">
-            <a href="#"><li class="menu__link">Friends</li></a>
-            <a href="{% url 'core:my_posts'%}"><li class="menu__link">Posts</li></a>
-            <a href="{% url 'core:home'%}"><li class="menu__link">News</li></a>
-          </ul>
+      <div class="header__left_side">
+        <a href="{% url 'core:home' %}"><h1 class="header__title">IT Step Project</h1></a>
+        <h2 class="header__about">About</h2>
+      </div>
+      {% if user.is_authenticated %}
+        <h3 class="header__user">Hello, {{user}}</h3>
+      {% else %}
+        <div class="header__authentication">
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'signup'%}">Signup</a>
         </div>
-
-        <ul class="menu__bottom">
-            <li class="menu__bottom_item">Settings</li>
-            <li class="menu__bottom_item">Logout</li>
-      </ul>
+        {% endif %}
     </div>
     
+    {% if user.is_authenticated %}
     {% block content %}{% endblock content %}
     {% else %}
-      <h1>U`r not logged in </h1>  
-      <h1>Pleasse go to the <a href="{% url 'login' %}">login page</a></h1>
+    {% block not_auth_content %}{% endblock not_auth_content %}
     {% endif %}
+ 
   </body>
 </html>
