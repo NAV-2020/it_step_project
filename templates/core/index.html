@@ -8,7 +8,7 @@
         src="{{user.profile.avatar.image.url}}"
         alt="My avatar"
       />
-      <div class="menu__name">Ivan Ivanov</div>
+      <div class="menu__name">{{user}}</div>
       <ul class="menu__links">
         <a href="">
           <li class="menu__link">Friends</li>
@@ -23,8 +23,8 @@
     </div>
 
     <ul class="menu__bottom">
-      <li class="menu__bottom_item">Settings</li>
-      <a href="{%url 'logout' %}"><li class="menu__bottom_item">Logout</li></a>
+      <a href="{% url 'users:settings' %}"><li class="menu__bottom_item">Settings</li></a>
+      <a href="{% url 'logout' %}"><li class="menu__bottom_item">Logout</li></a>
     </ul>
   </div>
 </div>

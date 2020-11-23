@@ -1,0 +1,56 @@
+{% extends '_base.html' %} 
+
+{% block content %}
+
+<div class="wrapper">
+    <div class="menu">
+      <div class="menu__top">
+        <img
+          class="menu__img"
+          src="{{user.profile.avatar.image.url}}"
+          alt="My avatar"
+        />
+        <div class="menu__name">{{user}}</div>
+        <ul class="menu__links">
+          <a href="">
+            <li class="menu__link">Friends</li>
+          </a>
+          <a href="{% url 'core:my_posts' %}">
+            <li class="menu__link">Posts</li>
+          </a>
+          <a href="{% url 'core:home' %}">
+            <li class="menu__link">News</li>
+          </a>
+        </ul>
+      </div>
+  
+      <ul class="menu__bottom">
+        <a href="{% url 'users:settings' %}"><li class="menu__bottom_item">Settings</li></a>
+        <a href="{% url 'logout' %}"><li class="menu__bottom_item">Logout</li></a>
+      </ul>
+    </div>
+</div>
+
+<div class="settings__initial_data">
+  <h1>First name:  {{ user.first_name }}</h1>
+  </br>
+  <h1>Last name:  {{ user.last_name }}</h1>
+</div>
+
+<div class="user__settings">
+  <form action="POST" class="user__settings_form">
+    {% csrf_token %}
+
+    {{ form.first_name.label }}
+    {{ form.first_name }}
+
+    {{ form.last_name.label }}
+    {{ form.last_name }}
+
+    <button class="btn btn-primary" type="submit">Save</button>
+</div>
+
+{% endblock content %}
+
+{% block not_auth %}
+{% endblock not_auth %}

@@ -121,8 +121,32 @@ li {
 }
 
 .signup {
-  width: 30%;
-  margin: 10% 35%;
+  width: 15%;
+  margin: 10% 45%;
   text-align:  center;
   font-size: 20px;
 }
+
+.settings__initial_data{
+  margin-left: 25%;
+}
+
+.user__settings{
+  width: 80%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 5% 0 0 20%;
+}
+
+.user__settings_form{
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#id_first_name, #id_last_name {
+  margin-bottom: 30px;
