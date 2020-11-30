@@ -38,7 +38,7 @@
 </div>
 
 <div class="user__settings">
-  <form action="POST" class="user__settings_form">
+  <form action="{% url 'users:settings' %}" method="post" class="user__settings_form">
     {% csrf_token %}
 
     {{ form.first_name.label }}
@@ -48,8 +48,14 @@
     {{ form.last_name }}
 
     <button class="btn btn-primary" type="submit">Save</button>
-</div>
+  </form>
 
+  <div class="messages badge badge-pill badge-danger">
+    {% if errors %}
+        {{ errors }}
+    {% endif %}
+  </div>
+</div>
 {% endblock content %}
 
 {% block not_auth %}

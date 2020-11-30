@@ -29,6 +29,7 @@
   </div>
 </div>
 <div class="content">
+  <a href="{% url 'core:post_creation' %}">Create post</a>
   {% for post in object_list %}
     <div class="card">
       <img src="{{post.image.url}}" class="card-img-top" alt="..."/>

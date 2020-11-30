@@ -2,7 +2,7 @@
 
 {% block not_auth_content %}
     <div class="signup">
-        <form action="{% url 'signup'%}" method="post">
+        <form action="{% url 'users:signup'%}" method="post">
             {%csrf_token%}
             {% comment %} {{form.as_p}} {% endcomment %}
 

@@ -1,0 +1,42 @@
+{% extends '_base.html' %} {% block content %}
+
+<div class="wrapper">
+    <div class="menu">
+        <div class="menu__top">
+            <img
+                class="menu__img"
+                src="{{user.profile.avatar.image.url}}"
+                alt="My avatar"
+            />
+            <div class="menu__name">{{user}}</div>
+            <ul class="menu__links">
+                <a href="">
+                    <li class="menu__link">Friends</li>
+                </a>
+                <a href="{% url 'core:my_posts' %}">
+                    <li class="menu__link">Posts</li>
+                </a>
+                <a href="{% url 'core:home' %}">
+                    <li class="menu__link">News</li>
+                </a>
+            </ul>
+        </div>
+  
+        <ul class="menu__bottom">
+            <a href="{% url 'users:settings' %}"
+                ><li class="menu__bottom_item">Settings</li></a
+            >
+            <a href="{%url 'logout' %}"><li class="menu__bottom_item">Logout</li></a>
+        </ul>
+    </div>
+</div>
+  
+<div class="post__create">
+    <form method="POST" action="">
+        {% csrf_token %} {{form.as_p}}
+  
+        <button type="submit">Create post</button>
+    </form>
+</div>
+  
+{% endblock content %} 

@@ -150,3 +150,13 @@ li {
 
 #id_first_name, #id_last_name {
   margin-bottom: 30px;
+}
+
+.messages{
+    margin-left: 40%;
+}
+
+.post__create{
+    margin-left: 700px;
+    margin-top: 200px;
+}

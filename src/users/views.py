@@ -27,3 +27,18 @@ class UserSettingsView(View):
                                 template=self.template_name,
                                 context=context)
     
+    def post(self, request, *args, **kwargs):
+        form = self.from_class(data=request.POST)
+
+        context = {
+                'form':form
+                }
+        if form.is_valid():
+            form.save(user=request.user)
+            return TemplateResponse(request, 
+                                    template=self.template_name,
+                                    context=context)
+        context['errors'] = form.errors
+        return TemplateResponse(request, 
+                                template=self.template_name,
+                                context=context)
