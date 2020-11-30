@@ -9,7 +9,6 @@ class Post(models.Model):
     
     title=models.CharField(max_length=45)
     body=models.TextField()
-
     image = models.ForeignKey('common.Photo', 
                             on_delete=models.CASCADE, 
                             null=True, 

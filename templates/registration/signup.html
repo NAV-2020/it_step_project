@@ -2,21 +2,21 @@
 
 {% block not_auth_content %}
     <div class="signup">
-        <form action="{% url 'users:signup'%}" method="post">
-            {%csrf_token%}
+        <form action="{% url 'users:signup' %}" method="post">
+            {% csrf_token %}
             {% comment %} {{form.as_p}} {% endcomment %}
 
-            {{form.username.label}}
-            {{form.username}} 
+            {{ form.username.label }}
+            {{ form.username }} 
 
-            {{form.phone_number.label}}
-            {{form.phone_number}}
+            {{ form.phone_number.label }}
+            {{ form.phone_number }}
 
-            {{form.password1.label}}
-            {{form.password1}}
+            {{ form.password1.label }}
+            {{ form.password1 }}
             
-            {{form.password2.label}}
-            {{form.password2}}
+            {{ form.password2.label }}
+            {{ form.password2 }}
 
             <button type="submit">SignUp</button>
         </form>
